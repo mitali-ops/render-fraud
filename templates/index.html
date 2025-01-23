@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection App</title>
+</head>
+<body>
+    <h1>Fraud Detection System</h1>
+    <form action="/predict" method="POST">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" required><br><br>
+
+        <label for="old_balance_org">Old Balance (Origin):</label>
+        <input type="text" id="old_balance_org" name="old_balance_org" required><br><br>
+
+        <label for="new_balance_orig">New Balance (Origin):</label>
+        <input type="text" id="new_balance_orig" name="new_balance_orig" required><br><br>
+
+        <label for="old_balance_dest">Old Balance (Destination):</label>
+        <input type="text" id="old_balance_dest" name="old_balance_dest" required><br><br>
+
+        <label for="new_balance_dest">New Balance (Destination):</label>
+        <input type="text" id="new_balance_dest" name="new_balance_dest" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
